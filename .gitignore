@@ -1,0 +1,39 @@
+# Ignore Python bytecode
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environments
+env/
+venv/
+*.env
+
+# Ignore log files
+*.log
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore specific certificate and key files inside certs directories
+certs/ca/*.crt
+certs/ca/*.csr
+certs/ca/*.key
+certs/ca/*.srl
+
+certs/server/*.crt
+certs/server/*.csr
+certs/server/*.key
+certs/server/*.srl
+
+certs/client/*.crt
+certs/client/*.csr
+certs/client/*.key
+certs/client/*.srl
+
+# Ignore editor config files
+*.swp
+.idea/
+.vscode/
+
+# Ignore backup files
+*.bak
