@@ -1,74 +1,180 @@
 # Pokémon Master Management
 
-Welcome to the **Pokémon Master Management** repository! This monolithic repository hosts a comprehensive solution for managing Pokémon masters, their Pokémon decks, and related features. It includes backend services, a client library, and a user interface for seamless interaction.
+![License](https://img.shields.io/github/license/trustlreis/pokemon-master-management)
+![Node.js](https://img.shields.io/badge/Node.js-%3E%3D16-brightgreen)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.7.0-brightgreen)
+![Java](https://img.shields.io/badge/Java-17%2B-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+![React](https://img.shields.io/badge/React-18.0+-61DAFB)
+
+## Overview
+
+**Pokémon Master Management** is a full-stack application designed to manage Pokémon Masters and their Pokémon decks. It is composed of three key components:
+
+1. **Pokémon Master Server**: A RESTful API built with Spring Boot.
+2. **Pokémon Master Client**: A reusable TypeScript API client.
+3. **Pokémon Master UI**: A React-based frontend for interacting with the API.
+
+This project demonstrates a complete stack for managing Pokémon data, combining a scalable backend API, a reusable API client, and an interactive user interface.
 
 
-## Repository Structure
+## Components
 
-- **[pokemon-master-server](pokemon-master-server/)**  
-  The backend service handling core logic, data persistence, and integration with external Pokémon APIs like PokeAPI.
+### Pokémon Master Server
 
-- **[pokemon-master-client](pokemon-master-client/)**  
-  A client-side library providing high-level abstractions for interacting with the backend.
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.7.0-brightgreen)
+![Java](https://img.shields.io/badge/Java-17%2B-blue)
 
-- **[pokemon-master-ui](pokemon-master-ui/)**  
-  A responsive and user-friendly interface enabling users to manage Pokémon masters and their decks.
+A backend API built with Spring Boot, providing endpoints for:
+- Managing Pokémon Masters.
+- Adding Pokémon to Masters' decks.
+- Searching for Pokémon.
+
+[**Read more about the Pokémon Master Server**](./pokemon-master-server/README.md)
+
+
+### Pokémon Master Client
+
+![Node.js](https://img.shields.io/badge/Node.js-%3E%3D16-brightgreen)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+
+A reusable TypeScript client for interacting with the Pokémon Master Server. It provides strong typing and supports integration into JavaScript/TypeScript applications.
+
+[**Read more about the Pokémon Master Client**](./pokemon-master-client/README.md)
+
+
+### Pokémon Master UI
+
+![React](https://img.shields.io/badge/React-18.0+-61DAFB)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow)
+
+A user-friendly frontend application built with React. It enables users to:
+- View Pokémon Masters.
+- Manage Pokémon decks for Masters.
+- Search and view Pokémon information.
+
+[**Read more about the Pokémon Master UI**](./pokemon-master-ui/README.md)
 
 
 ## Features
 
-- **Dynamic Pokémon Data**: Integrates with PokeAPI to fetch Pokémon details.
-- **User Management**: Secure authentication and user-specific data handling.
-- **Deck Management**: Create and manage decks for Pokémon masters.
-- **API Documentation**: Explore APIs via Swagger UI at `/swagger-ui.html`.
+- **Full-stack Architecture**:
+  - Spring Boot for the backend API.
+  - TypeScript for the reusable API client.
+  - React for the user interface.
+
+- **Comprehensive Management**:
+  - CRUD operations for Pokémon and Masters.
+  - Search Pokémon by name.
+
+- **OpenAPI Integration**:
+  - Automatically generated API documentation for the backend.
+
+- **Modern Development Practices**:
+  - TypeScript for type safety.
+  - Node.js for cross-platform development.
+  - React for an intuitive user experience.
 
 
-## Setup
+## Project Structure
+
+```
+pokemon-master-management/
+├── pokemon-master-server/    # Backend API with Spring Boot
+├── pokemon-master-client/    # Reusable TypeScript API client
+├── pokemon-master-ui/        # Frontend application with React
+├── README.md                 # Main project documentation
+└── LICENSE                   # License file
+```
+
+
+## Getting Started
 
 ### Prerequisites
-- **Java**: 17+
-- **Maven**: 3+
-- **Node.js & npm/yarn**: For the UI component
 
-### Steps
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/trustlreis/pokemon-master-management.git
-   cd pokemon-master-management
-   ```
+Ensure you have the following installed:
+- **Java**: `17` or later (for the server).
+- **Maven**: `3.8.1` or later.
+- **Node.js**: `16` or later (for the client and UI).
+- **npm**: `7` or later.
 
-2. **Start the Backend**:
+
+### Setting up the Server
+
+1. Navigate to the server directory:
    ```bash
    cd pokemon-master-server
+   ```
+
+2. Build and run the server:
+   ```bash
+   mvn clean install
    mvn spring-boot:run
    ```
 
-3. **Build the Client**:
+3. The server will be available at `http://localhost:8080`.
+
+
+### Setting up the Client
+
+1. Navigate to the client directory:
    ```bash
    cd pokemon-master-client
-   mvn clean install
    ```
 
-4. **Start the UI**:
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Build the client:
+   ```bash
+   npm run build
+   ```
+
+
+### Setting up the UI
+
+1. Navigate to the UI directory:
    ```bash
    cd pokemon-master-ui
+   ```
+
+2. Install dependencies:
+   ```bash
    npm install
+   ```
+
+3. Start the development server:
+   ```bash
    npm start
    ```
 
-5. Access the application:
-   - **Backend APIs**: [http://localhost:8080](http://localhost:8080)
-   - **Swagger UI**: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
-   - **Frontend**: [http://localhost:3000](http://localhost:3000)
+4. Access the UI at:
+   ```
+   http://localhost:3000
+   ```
+
+
+## API Documentation
+
+The server provides Swagger-based API documentation, accessible at:
+```
+http://localhost:8080/swagger-ui.html
+```
+
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -m 'Add YourFeature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a Pull Request.
 
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE.md).
-
-
-## Contribution Guidelines
-
-We welcome contributions! Submit issues or pull requests to the respective components. Follow the repository structure for consistency.
-
-GitHub Repository: [Pokémon Master Management](https://github.com/trustlreis/pokemon-master-management)
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
