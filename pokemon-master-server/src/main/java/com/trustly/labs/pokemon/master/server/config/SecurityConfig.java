@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .frameOptions().sameOrigin() // Allow H2 console to be displayed in frames
             .and()
             .authorizeRequests()
-                .antMatchers("/h2-console/**", "/api/catalog/**", "/favicon.ico").permitAll() // Allow public access to H2 console and catalog
+                .antMatchers("/h2-console/**", "/api/catalog/**", "/v3/api-docs", "/swagger-ui.html", "/favicon.ico").permitAll() // Allow public access to H2 console and catalog
                 .antMatchers("/api/masters/**").authenticated() // Secure masters endpoints
                 .anyRequest().authenticated() // Secure all other endpoints by default
             .and()
