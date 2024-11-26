@@ -1,0 +1,83 @@
+# Node.js dependencies
+node_modules/
+
+# TypeScript compiled output
+dist/
+*.js
+*.js.map
+
+# TypeScript definition files (if generated)
+*.d.ts
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.*.local
+
+# VSCode settings
+.vscode/
+.vscode-test/
+
+# MacOS files
+.DS_Store
+
+# Editor-specific files
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Optional npm cache directory
+.npm/
+
+# Optional yarn cache directory
+.yarn/
+.pnp.*
+
+# Optional eslint cache
+.eslintcache
+
+# Optional jest cache directory
+jest/
+
+# Optional coverage directory
+coverage/
+
+# TypeScript build info files
+*.tsbuildinfo
+
+# Local TypeScript typings
+typings/
+
+# Prettier config and cache
+.prettierignore
+.prettiercache
+
+# Temporary files created during builds
+*.tmp
+*.temp
+
+# Babel cache
+.cache/
+
+# Lint-staged cache
+.lintstagedrc
+
+# Ignore output from linting tools
+lint-results.txt
+
+# Next.js build output (if applicable)
+.next/
+
+# Firebase build output (if applicable)
+.firebaserc
+.firebase/
