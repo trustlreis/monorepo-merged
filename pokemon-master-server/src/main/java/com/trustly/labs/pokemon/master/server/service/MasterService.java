@@ -2,6 +2,7 @@ package com.trustly.labs.pokemon.master.server.service;
 
 import com.trustly.labs.pokemon.master.server.entity.Master;
 import com.trustly.labs.pokemon.master.server.repository.MasterRepository;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
