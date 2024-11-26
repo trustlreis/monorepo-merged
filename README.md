@@ -1,92 +1,74 @@
-# Pokémon Master Monolith Repository
+# Pokémon Master Management
 
-This monolithic repository is an all-in-one solution for managing Pokémon masters and their Pokémon decks. It includes backend services, client logic, and a user interface for seamless interaction. Each component plays a crucial role in the system's functionality.
-
-
-## Components
-
-### 1. **pokemon-master-server**
-   - **Description**:  
-     The backend service responsible for handling core business logic, data persistence, and integration with external APIs like PokeAPI.
-   - **Key Features**:
-     - RESTful API endpoints for managing Pokémon masters and decks.
-     - Integration with PokeAPI for fetching Pokémon data dynamically.
-     - Secure user management and authentication.
-     - Database connectivity using JPA and Hibernate.
-   - **Tech Stack**:
-     - Java 17
-     - Spring Boot
-     - H2 (in-memory) or other databases
-   - **Endpoints**:
-     - `GET /api/masters`: List all masters.
-     - `POST /api/masters`: Create a new master.
-     - `POST /api/masters/{masterId}/deck`: Add Pokémon to a master's deck.
-     - `GET /api/catalog`: Fetch Pokémon data from PokeAPI.
+Welcome to the **Pokémon Master Management** repository! This monolithic repository hosts a comprehensive solution for managing Pokémon masters, their Pokémon decks, and related features. It includes backend services, a client library, and a user interface for seamless interaction.
 
 
-### 2. **pokemon-master-client**
-   - **Description**:  
-     The intermediary service or SDK that interacts with the backend APIs, handling client-side business logic and streamlining API calls for the UI.
-   - **Key Features**:
-     - Encapsulates API requests for seamless integration with the UI.
-     - Validates client-side data before passing it to the server.
-     - Simplifies interaction with the backend by providing high-level abstractions.
+## Repository Structure
+
+- **[pokemon-master-server](pokemon-master-server/)**  
+  The backend service handling core logic, data persistence, and integration with external Pokémon APIs like PokeAPI.
+
+- **[pokemon-master-client](pokemon-master-client/)**  
+  A client-side library providing high-level abstractions for interacting with the backend.
+
+- **[pokemon-master-ui](pokemon-master-ui/)**  
+  A responsive and user-friendly interface enabling users to manage Pokémon masters and their decks.
 
 
-### 3. **pokemon-master-ui**
-   - **Description**:  
-     The front-end user interface designed for Pokémon enthusiasts to interact with the system effortlessly.
-   - **Key Features**:
-     - Responsive design for smooth user experience across devices.
-     - Features for creating masters, managing decks, and browsing Pokémon.
-     - Easy-to-use interface powered by modern frontend frameworks.
-   - **Tech Stack**:
-     - Framework: React/Angular/Vue (to be finalized)
-     - Integration with `pokemon-master-client` for data handling.
-     - User-friendly design with focus on accessibility.
+## Features
+
+- **Dynamic Pokémon Data**: Integrates with PokeAPI to fetch Pokémon details.
+- **User Management**: Secure authentication and user-specific data handling.
+- **Deck Management**: Create and manage decks for Pokémon masters.
+- **API Documentation**: Explore APIs via Swagger UI at `/swagger-ui.html`.
 
 
-## How to Get Started
+## Setup
 
-1. **Prerequisites**:
-   - Java 17
-   - Maven 3+
-   - Node.js and npm/yarn (for UI component)
+### Prerequisites
+- **Java**: 17+
+- **Maven**: 3+
+- **Node.js & npm/yarn**: For the UI component
 
-2. **Setup**:
-   - Clone the repository:  
-     ```bash
-     git clone <repository-url>
-     cd pokemon-master-monolith
-     ```
-   - Start the server:  
-     ```bash
-     cd pokemon-master-server
-     mvn spring-boot:run
-     ```
-   - Build and run the client:  
-     ```bash
-     cd pokemon-master-client
-     mvn clean install
-     ```
-   - Start the UI:  
-     ```bash
-     cd pokemon-master-ui
-     npm install
-     npm start
-     ```
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/trustlreis/pokemon-master-management.git
+   cd pokemon-master-management
+   ```
 
-3. **Access the System**:
-   - Backend APIs: [http://localhost:8080](http://localhost:8080)
-   - Swagger UI: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
-   - Frontend: [http://localhost:3000](http://localhost:3000)
+2. **Start the Backend**:
+   ```bash
+   cd pokemon-master-server
+   mvn spring-boot:run
+   ```
+
+3. **Build the Client**:
+   ```bash
+   cd pokemon-master-client
+   mvn clean install
+   ```
+
+4. **Start the UI**:
+   ```bash
+   cd pokemon-master-ui
+   npm install
+   npm start
+   ```
+
+5. Access the application:
+   - **Backend APIs**: [http://localhost:8080](http://localhost:8080)
+   - **Swagger UI**: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+   - **Frontend**: [http://localhost:3000](http://localhost:3000)
 
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE.md). 
+This project is licensed under the [MIT License](LICENSE.md).
 
 
 ## Contribution Guidelines
 
-We welcome contributions! Please submit issues and pull requests in the relevant components' directories.
+We welcome contributions! Submit issues or pull requests to the respective components. Follow the repository structure for consistency.
+
+GitHub Repository: [Pokémon Master Management](https://github.com/trustlreis/pokemon-master-management)
