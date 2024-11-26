@@ -2,7 +2,7 @@
 
 ![License](https://img.shields.io/github/license/trustlreis/pokemon-master-management)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.7.0-brightgreen)
-![Java](https://img.shields.io/badge/Java-11-blue)
+![Java](https://img.shields.io/badge/Java-17-blue)
 ![Maven](https://img.shields.io/badge/Maven-3.8.1-orange)
 
 ## Overview
