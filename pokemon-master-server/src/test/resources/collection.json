@@ -1,0 +1,115 @@
+{
+    "info": {
+      "name": "Pokemon Master Server",
+      "description": "Postman collection for interacting with the Pokemon Master Server API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Get All Masters",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8080/api/masters",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "masters"]
+          }
+        }
+      },
+      {
+        "name": "Create Master",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"Ash Ketchum\",\n  \"region\": \"Kanto\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/api/masters",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "masters"]
+          }
+        }
+      },
+      {
+        "name": "Add Pokemon to Deck",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8080/api/masters/1/deck?pokemonId=25",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "masters", "1", "deck"],
+            "query": [
+              {
+                "key": "pokemonId",
+                "value": "25"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Get All Pokemon",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8080/api/pokemon",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "pokemon"]
+          }
+        }
+      },
+      {
+        "name": "Search Pokemon by Name or Skill",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8080/api/pokemon/search?name=pikachu",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "pokemon", "search"],
+            "query": [
+              {
+                "key": "name",
+                "value": "pikachu"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Get Pokemon By ID",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8080/api/pokemon/25",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "pokemon", "25"]
+          }
+        }
+      }
+    ]
+  }
+  
