@@ -1,10 +1,10 @@
 {
   "type": "module",
   "name": "@trustlreis/pokemon-master-client",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Pokemon Master Client for Master Server",
   "main": "dist/main.js",
-  "types": "dist/pokemon-master-clien.d.ts",
+  "types": "dist/types/pokemon-master-clien.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/trustlreis/pokemon-master-management.git"
