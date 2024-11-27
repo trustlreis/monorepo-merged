@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@trustlreis/pokemon-master-client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Pokemon Master Client for Master Server",
   "main": "dist/main.js",
   "types": "dist/pokemon-master-clien.d.ts",
