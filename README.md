@@ -22,8 +22,10 @@ This project demonstrates a complete stack for managing Pokémon data, combining
 
 ### Pokémon Master Server
 
+![License](https://img.shields.io/github/license/trustlreis/pokemon-master-management)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.7.0-brightgreen)
-![Java](https://img.shields.io/badge/Java-17%2B-blue)
+![Java](https://img.shields.io/badge/Java-17-blue)
+![Maven](https://img.shields.io/badge/Maven-3.8.1-orange)
 
 A backend API built with Spring Boot, providing endpoints for:
 - Managing Pokémon Masters.
@@ -35,8 +37,10 @@ A backend API built with Spring Boot, providing endpoints for:
 
 ### Pokémon Master Client
 
+![License](https://img.shields.io/github/license/trustlreis/pokemon-master-management)
 ![Node.js](https://img.shields.io/badge/Node.js-%3E%3D16-brightgreen)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+![npm](https://img.shields.io/badge/npm-8.x-red?logo=npm&logoColor=white)
 
 A reusable TypeScript client for interacting with the Pokémon Master Server. It provides strong typing and supports integration into JavaScript/TypeScript applications.
 
@@ -45,8 +49,11 @@ A reusable TypeScript client for interacting with the Pokémon Master Server. It
 
 ### Pokémon Master UI
 
-![React](https://img.shields.io/badge/React-18.0+-61DAFB)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow)
+![License](https://img.shields.io/github/license/trustlreis/pokemon-master-management)
+![React](https://img.shields.io/badge/react-18.0.0-blue?logo=react&logoColor=white)
+![Node.js](https://img.shields.io/badge/node.js-16.x-green?logo=node.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-4.x-blue?logo=typescript&logoColor=white)
+![npm](https://img.shields.io/badge/npm-8.x-red?logo=npm&logoColor=white)
 
 A user-friendly frontend application built with React. It enables users to:
 - View Pokémon Masters.

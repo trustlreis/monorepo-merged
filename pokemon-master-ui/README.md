@@ -1,5 +1,6 @@
 # Pokémon Master UI
 
+![License](https://img.shields.io/github/license/trustlreis/pokemon-master-management)
 ![React](https://img.shields.io/badge/react-18.0.0-blue?logo=react&logoColor=white)
 ![Node.js](https://img.shields.io/badge/node.js-16.x-green?logo=node.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/typescript-4.x-blue?logo=typescript&logoColor=white)
