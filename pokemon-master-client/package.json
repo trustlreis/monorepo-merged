@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@trustlreis/pokemon-master-client",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Pokemon Master Client for Master Server",
   "main": "dist/pokemon-master-client.js",
   "types": "dist/types/pokemon-master-client.d.ts",
@@ -14,7 +14,7 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
-  },  
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc"
@@ -22,10 +22,10 @@
   "author": "Luis Machado Reis",
   "license": "MIT",
   "dependencies": {
-    "node-fetch": "^3.3.2"
+    "ky": "^1.7.2"
   },
   "devDependencies": {
-    "@types/node-fetch": "^2.6.12",
+    "@types/node": "^22.10.0",
     "typescript": "^5.7.2"
   }
 }

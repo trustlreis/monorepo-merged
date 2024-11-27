@@ -1,88 +1,76 @@
-import fetch, { Headers } from "node-fetch"; // Import node-fetch and Headers
+import ky, { KyInstance } from 'ky';
 
-export interface ApiClientConfig {
-  baseUrl: string; // Base URL for the API
-  username: string; // Username for Basic Auth
-  password: string; // Password for Basic Auth
+// Helper function to generate a Basic Authentication header
+const createAuthHeader = (username: string, password: string): string => {
+  const credentials = `${username}:${password}`;
+  return `Basic ${btoa(credentials)}`; // `btoa` encodes the credentials in Base64
+};
+
+// Create a Ky instance with HTTP Basic Authentication
+const api: KyInstance = ky.create({
+  prefixUrl: process.env.API_BASEURL || 'http://localhost:8080/api', 
+  timeout: 10000, // Request timeout in milliseconds
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: createAuthHeader(process.env.API_USERNAME || 'user', process.env.API_PASSWORD || 'user'), 
+  },
+});
+
+/**
+ * Interface defining the client for interacting with the API.
+ */
+interface ApiClient {
+  getAllMasters: () => Promise<any>;
+  createMaster: (masterData: Record<string, any>) => Promise<any>;
+  getAllPokemon: () => Promise<any>;
+  createPokemon: (pokemonData: Record<string, any>) => Promise<any>;
+  updatePokemon: (id: string, updatedData: Record<string, any>) => Promise<any>;
+  deletePokemon: (id: string) => Promise<void>;
+  getAllPokemonMasters: () => Promise<any>;
+  assignPokemonToMaster: (masterId: string, pokemonId: number) => Promise<any>;
+  unassignPokemonFromMaster: (masterId: string, pokemonId: number) => Promise<any>;
 }
 
-export class ApiClient {
-  private baseUrl: string; // Base URL of the API
-  private authHeader: string; // Authorization header for HTTP Basic Auth
+/**
+ * Implementation of the API Client using Ky.
+ */
+const ApiClient: ApiClient = {
+  async getAllMasters(): Promise<any> {
+    return api.get('masters').json();
+  },
 
-  constructor(config: ApiClientConfig) {
-    this.baseUrl = config.baseUrl;
-    this.authHeader = `Basic ${Buffer.from(
-      `${config.username}:${config.password}`
-    ).toString("base64")}`; // Encode username:password for Basic Auth
-  }
+  async createMaster(masterData: Record<string, any>): Promise<any> {
+    return api.post('masters', { json: masterData }).json();
+  },
 
-  // Private helper method for making HTTP requests
-  private async request<T>(
-    method: string, // HTTP method (GET, POST, etc.)
-    endpoint: string, // API endpoint path
-    body?: any // Optional request body
-  ): Promise<T> {
-    const headers = new Headers({
-      "Content-Type": "application/json",
-      Authorization: this.authHeader, // Attach Authorization header
-    });
+  async getAllPokemon(): Promise<any> {
+    return api.get('pokemon').json();
+  },
 
-    const response = await fetch(`${this.baseUrl}${endpoint}`, {
-      method,
-      headers,
-      body: body ? JSON.stringify(body) : undefined, // Include body if provided
-    });
+  async createPokemon(pokemonData: Record<string, any>): Promise<any> {
+    return api.post('pokemon', { json: pokemonData }).json();
+  },
 
-    if (!response.ok) {
-      // Handle HTTP errors
-      throw new Error(
-        `HTTP error! Status: ${response.status}, Message: ${response.statusText}`
-      );
-    }
+  async updatePokemon(id: string, updatedData: Record<string, any>): Promise<any> {
+    return api.put(`pokemon/${id}`, { json: updatedData }).json();
+  },
 
-    // Explicitly cast the JSON response to the expected type `T`
-    const jsonResponse = (await response.json()) as T;
-    return jsonResponse;
-  }
+  async deletePokemon(id: string): Promise<void> {
+    await api.delete(`pokemon/${id}`);
+  },
 
-  // Public API methods corresponding to the OpenAPI specification
+  async getAllPokemonMasters(): Promise<any> {
+    return api.get('pokemon-masters').json();
+  },
 
-  // GET /api/masters - Retrieve all masters
-  public async getAllMasters(): Promise<any> {
-    return this.request("GET", "/api/masters");
-  }
+  async assignPokemonToMaster(masterId: string, pokemonId: number): Promise<any> {
+    return api.post(`masters/${masterId}/deck?pokemonId=${pokemonId}`).json();
+  },
 
-  // POST /api/masters - Create a new master
-  public async createMaster(data: any): Promise<any> {
-    return this.request("POST", "/api/masters", data);
-  }
+  async unassignPokemonFromMaster(masterId: string, pokemonId: number): Promise<any> {
+    return api.delete(`masters/${masterId}/deck?pokemonId=${pokemonId}`).json();
+  },
+};
 
-  // POST /api/masters/{masterId}/deck - Add a Pokemon to a master's deck
-  public async addPokemonToDeck(
-    masterId: number,
-    pokemonId: number
-  ): Promise<any> {
-    return this.request(
-      "POST",
-      `/api/masters/${masterId}/deck?pokemonId=${pokemonId}`
-    );
-  }
-
-  // GET /api/pokemon - Retrieve all Pokemon
-  public async getAllPokemon(): Promise<any[]> {
-    return this.request("GET", "/api/pokemon");
-  }
-
-  // GET /api/pokemon/{id} - Retrieve Pokemon by ID
-  public async getPokemonById(id: number): Promise<any> {
-    return this.request("GET", `/api/pokemon/${id}`);
-  }
-
-  // GET /api/pokemon/search - Search Pokemon by name
-  public async searchPokemon(name: string): Promise<any[]> {
-    return this.request("GET", `/api/pokemon/search?name=${name}`);
-  }
-}
-
+// Export the ApiClient as the default export
 export default ApiClient;
