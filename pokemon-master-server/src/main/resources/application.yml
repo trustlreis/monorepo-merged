@@ -30,3 +30,8 @@ users:
     - username: user
       password: ${USER_PASSWORD:user} # Use environment variable or default to 'user'
       roles: USER
+
+cors:
+  allowed-origins:
+    - "http://example.com"
+    - "http://localhost:3000"
