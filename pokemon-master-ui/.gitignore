@@ -1,0 +1,113 @@
+# Node.js
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.pnpm-debug.log*
+.vscode-test/
+
+# TypeScript
+*.tsbuildinfo
+*.d.ts
+out/
+build/
+tsconfig.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Visual Studio Code
+.vscode/
+.history/
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+.idea_modules/
+out/
+.gradle/
+.externalToolBuilders/
+# Caches
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries/
+.idea/vcs.xml
+.idea/modules.xml
+.idea/libraries/
+.idea/misc.xml
+.idea/vcs/
+.idea/dataSources/
+.idea/dataSources.ids/
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/markdown-navigator.xml
+.idea/dataSources.xml
+.idea/sqlDataSources.ids/
+.idea/dataSources.drivers/
+.idea/microservices.xml
+.idea/libraries/
+.idea/scopes/
+.idea/jsLibraryMappings.xml
+.idea/codeStyles/
+
+# Common
+.DS_Store
+Thumbs.db
+*.swp
+*~
+*.sublime-workspace
+*.sublime-project
+*.class
+*.war
+*.ear
+*.pyc
+__pycache__/
+*.bak
+*.tmp
+~$*
+# VSCode/Jetbrains backup
+*.orig
+*.rej
+.idea/
+.idea_modules/
+*.ipr
+*.iml
+*.iws
+.idea/*.xml
+.idea/artifacts
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/scopes/
+.idea/dictionaries/
+.idea/vcs/
+.idea/jsLibraryMappings.xml
+.idea/python/
+.idea/.name
+.idea/misc.xml
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
