@@ -1,46 +1,135 @@
-# Getting Started with Create React App
+# Pokémon Master UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/react-18.0.0-blue?logo=react&logoColor=white)
+![Node.js](https://img.shields.io/badge/node.js-16.x-green?logo=node.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-4.x-blue?logo=typescript&logoColor=white)
+![npm](https://img.shields.io/badge/npm-8.x-red?logo=npm&logoColor=white)
 
-## Available Scripts
+The **Pokémon Master UI** is the front-end application for the Pokémon Master Management System. It provides a user-friendly interface for trainers to manage their Pokémon, battles, and teams. Built with modern web technologies, this project aims to deliver a seamless and intuitive user experience.
 
-In the project directory, you can run:
 
-### `npm start`
+# Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Pokémon Catalog simple search
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Planned Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 🖥️ **Interactive Interface**: Manage your Pokémon collection, battles, and teams with ease.
+- ⚡ **Real-time Updates**: Stay updated with live data fetched from the Pokémon Master Client.
+- 🎨 **Responsive Design**: Optimized for desktops, tablets, and mobile devices.
+- 🔍 **Search and Filter**: Quickly find and organize your Pokémon.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Ensure you have the following installed:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Node.js](https://nodejs.org/) (>= 16.x)
+- [npm](https://www.npmjs.com/) (>= 8.x)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Installation
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   ```bash
+   git clone https://github.com/trustlreis/pokemon-master-management.git
+   cd pokemon-master-management/pokemon-master-ui
+   ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+2. Install dependencies:
 
-## Learn More
+   ```bash
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage
+
+### Development Server
+
+Run the development server for local testing:
+
+```bash
+npm start
+```
+
+Visit [http://localhost:3000](http://localhost:3000) in your browser to access the application.
+
+### Build for Production
+
+Generate optimized static files for production:
+
+```bash
+npm run build
+```
+
+
+## Testing
+
+Run the test suite to ensure the application is working as expected:
+
+```bash
+npm test
+```
+
+
+## Project Structure
+
+```plaintext
+pokemon-master-ui/
+├── public/          # Static assets (images, icons, etc.)
+├── src/
+│   ├── components/  # Reusable UI components
+│   ├── App.tsx      # Main application component
+│   └── index.tsx    # Entry point of the application
+├── .gitignore       # Git ignore file
+├── package.json     # Project dependencies and scripts
+└── README.md        # Project documentation
+```
+
+
+## API Integration
+
+This project communicates with the [Pokémon Master Client](https://github.com/trustlreis/pokemon-master-management/tree/main/pokemon-master-client) for backend functionality.
+
+### Environment Variables
+
+The following environment variables are used to configure the API client:
+
+| Variable                     | Description                              | Default Value                     |
+|------------------------------|------------------------------------------|-----------------------------------|
+| `REACT_APP_API_BASE_URL`     | The base URL for the API                | `http://localhost:8080/api`      |
+| `REACT_APP_API_USERNAME`     | The username for API authentication     | `user`                           |
+| `REACT_APP_API_PASSWORD`     | The password for API authentication     | `user`                           |
+
+#### Example `.env` File
+
+Create a `.env` file in the root directory of the project and define the variables as needed:
+
+```plaintext
+REACT_APP_API_BASE_URL=http://your-api-server.com/api
+REACT_APP_API_USERNAME=your-username
+REACT_APP_API_PASSWORD=your-password
+```
+
+Ensure the **Pokémon Master Client** is running locally or hosted, and these environment variables are set up before starting the application.
+
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+
+## Acknowledgements
+
+Special thanks to the contributors and the open-source community for making this project possible.
+
+
+## Contact
+
+For questions or support, please contact:
+
+- **Project Owner**: [@trustlreis](https://github.com/trustlreis)
+- **Issues**: Use the [GitHub Issues](https://github.com/trustlreis/pokemon-master-management/issues)
