@@ -6,9 +6,6 @@ dist/
 *.js
 *.js.map
 
-# TypeScript definition files (if generated)
-*.d.ts
-
 # Logs
 logs/
 *.log
