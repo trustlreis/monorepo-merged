@@ -119,7 +119,7 @@ Ensure the **Pokémon Master Client** is running locally or hosted, and these en
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](../LICENSE.md).
 
 
 ## Acknowledgements
