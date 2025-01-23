@@ -1,0 +1,23 @@
+{
+    
+    "compilerOptions": {
+      "declaration": true,                // Generates .d.ts files
+      "declarationDir": "./dist/types",   // Directory for .d.ts files
+      "emitDeclarationOnly": false,       // Ensures .js files are also emitted
+      "moduleResolution": "node",
+      "target": "ES2017",                // Target modern JavaScript
+      "module": "ESNext",                // Use ESNext modules for output
+      "lib": ["ESNext", "DOM"],          // Include modern JavaScript and browser APIs
+      "outDir": "./dist",                // Output compiled JavaScript to the dist directory
+      "rootDir": "./src",                // Specify the root directory of your TypeScript files
+      "strict": true,                    // Enable strict type checking
+      "esModuleInterop": true,           // Allow default imports from CommonJS modules
+      "forceConsistentCasingInFileNames": true,
+      "skipLibCheck": true
+    },
+
+    "include": ["src/**/*.ts"],          // Include all TypeScript files in src
+    "exclude": ["node_modules", "dist"]  // Exclude node_modules and output directory
+
+}
+  

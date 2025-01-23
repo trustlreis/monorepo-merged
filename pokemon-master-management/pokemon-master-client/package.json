@@ -1,0 +1,31 @@
+{
+  "type": "module",
+  "name": "@trustlreis/pokemon-master-client",
+  "version": "0.0.8",
+  "description": "Pokemon Master Client for Master Server",
+  "main": "dist/pokemon-master-client.js",
+  "types": "dist/types/pokemon-master-client.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trustlreis/pokemon-master-management.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc"
+  },
+  "author": "Luis Machado Reis",
+  "license": "MIT",
+  "dependencies": {
+    "ky": "^1.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2"
+  }
+}

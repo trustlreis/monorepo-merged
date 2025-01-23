@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:pokemon_db
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8080
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+users:
+  users:
+    - username: admin
+      password: ${ADMIN_PASSWORD:admin} # Use environment variable or default to 'admin'
+      roles: ADMIN
+    - username: user
+      password: ${USER_PASSWORD:user} # Use environment variable or default to 'user'
+      roles: USER
+
+cors:
+  allowed-origins:
+    - "http://example.com"
+    - "http://localhost:3000"
