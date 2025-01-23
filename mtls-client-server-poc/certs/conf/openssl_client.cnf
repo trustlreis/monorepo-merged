@@ -1,0 +1,21 @@
+[ req ]
+default_bits        = 2048
+default_md          = sha256
+default_keyfile     = client.key    # Default private key file
+distinguished_name  = req_distinguished_name
+req_extensions      = req_ext       # Extensions for certificate request
+prompt              = no            # Don't prompt for DN info
+
+[ req_distinguished_name ]
+C  = US                       # Country (2 letter code)
+ST = New York                 # State or Province
+L  = New York City            # Locality
+O  = My Company               # Organization Name
+OU = IT Department            # Organizational Unit
+CN = client.local             # Common Name (client-specific identifier)
+
+[ req_ext ]
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = client.local
